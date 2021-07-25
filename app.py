@@ -8,7 +8,7 @@ logging.basicConfig(format='%(asctime)s %(message)s') # (Hugo)
 if __name__ == "__main__": 
     # colocar o codigo principal aqui
     ip = ip_remota # introduzir ip
-    status_de_agora = get_status_port(0,ip) # executar função e guardar o valor dentro da variavel
+    status_de_agora = get_status_port(ip, port) # executar função e guardar o valor dentro da variavel
     print(f'o status é : {status_de_agora}') # print resultado
 
     status = get_status_port(0, ip) # Tentar escrever todas variaveis em portugues
