@@ -5,9 +5,3 @@ status_de_agora = get_status_port(0,ip) # executar função e guardar o valor de
 
 print(f'o status é : {status_de_agora}') # print resultado
 
-
-
-
-
-
-

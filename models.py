@@ -2,6 +2,10 @@ import requests # request é a biblioteca responsavel por fazer requisições HT
 import json # É responsavel por padronizar entradas e saidas de dados no formato json
 import datetime
 
+# TODO: deixar as variaveis de configuracao de IP e Porta no arquivo .env
+# TODO: padronizar as chaves do objeto JSON seguindo o padrao javascript
+# TODO: renomear o "data_time" para "dateTime" ou algum sinonimo
+
 def get_status_port(port,ip):  # Função criada para simplificar a requisição dos dados da remota
     remota_url = f'http://{ip}/api/crown/ac/GetRestDataOut' # Endereço reponsavel pela remota (api)
     param ={"data":{"Offset":port,"data_time":'hoje'}}  # indicação de qual porta eu quero pegar da remota ( comando json a ser enviado para a remota )
