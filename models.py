@@ -4,10 +4,11 @@ import datetime
 
 # TODO: deixar as variaveis de configuracao de IP e Porta no arquivo .env
 # TODO: padronizar as chaves do objeto JSON seguindo o padrao javascript
-# TODO: renomear o "data_time" para "dateTime" ou algum sinonimo
+# TODO: renomear o "data_time" para "dateTime" ou algum sinonimo em ingles respeitando o Case
 # TODO: "models" seria o melhor nome para esse arquivo?
+# FIXED: troca dos parametros de "IP" e "PORT" na funcao get_status para parecer mais padronizado
 
-def get_status_port(port,ip):  # Função criada para simplificar a requisição dos dados da remota
+def get_status_port(ip, port):  # Função criada para simplificar a requisição dos dados da remota
     remota_url = f'http://{ip}/api/crown/ac/GetRestDataOut' # Endereço reponsavel pela remota (api)
     param ={"data":{"Offset":port,"data_time":'hoje'}}  # indicação de qual porta eu quero pegar da remota ( comando json a ser enviado para a remota )
     headers = {'content-type': 'application/json'} # estamos especificando o formato de entrega HTTP
@@ -22,7 +23,7 @@ def get_time():
     time_now = f"{year}-{month}-{day}T{hour}:{mili}Z"
     return time_now
 
-def get_time_v2():
+def get_time_v2(): # (Hugo)
     now = datetime.datetime.now()
     round_mili = str(now.microsecond // 1000) # round is only for decimal numbers
     str_time = now.strftime('%Y-%m-%dT%X:' + round_mili)
