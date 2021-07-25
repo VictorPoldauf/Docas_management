@@ -23,6 +23,6 @@ def get_time():
 
 def get_time_v2():
     now = datetime.datetime.now()
-    round_mili = round(now.microsecond, 3)
-    str_time = now.strftime('%Y-%m-%dT%'+round_mili)
+    round_mili = str(round(int(now.microsecond), 3))
+    str_time = now.strftime('%Y-%m-%d%X'+round_mili)
     return str_time
