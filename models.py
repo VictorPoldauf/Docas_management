@@ -5,6 +5,7 @@ import datetime
 # TODO: deixar as variaveis de configuracao de IP e Porta no arquivo .env
 # TODO: padronizar as chaves do objeto JSON seguindo o padrao javascript
 # TODO: renomear o "data_time" para "dateTime" ou algum sinonimo
+# TODO: "models" seria o melhor nome para esse arquivo?
 
 def get_status_port(port,ip):  # Função criada para simplificar a requisição dos dados da remota
     remota_url = f'http://{ip}/api/crown/ac/GetRestDataOut' # Endereço reponsavel pela remota (api)
@@ -23,6 +24,6 @@ def get_time():
 
 def get_time_v2():
     now = datetime.datetime.now()
-    round_mili = str(round(int(now.microsecond), 3))
-    str_time = now.strftime('%Y-%m-%d%X'+round_mili)
+    round_mili = str(now.microsecond // 1000) # round is only for decimal numbers
+    str_time = now.strftime('%Y-%m-%dT%X:' + round_mili)
     return str_time
