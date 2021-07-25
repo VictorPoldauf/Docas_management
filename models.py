@@ -7,6 +7,8 @@ import logging
 # TODO: padronizar as chaves do objeto JSON seguindo o padrao javascript
 # TODO: renomear o "data_time" para "dateTime" ou algum sinonimo em ingles respeitando o Case
 # TODO: "models" seria o melhor nome para esse arquivo?
+# TODO: padronizar o uso de aspas simples ou duplas, deixar o codigo uniforme
+
 # FIXED: troca dos parametros de "IP" e "PORT" na funcao get_status para parecer mais padronizado
 
 def get_status_port(ip, port):  # Função criada para simplificar a requisição dos dados da remota
