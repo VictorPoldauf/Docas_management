@@ -16,7 +16,7 @@ def get_status_port(ip, port):  # Função criada para simplificar a requisiçã
     response = requests.post(remota_url,data=json.dumps(param), headers=headers) #  enviando uma requisição post na url da remota, transformando os parametros em json e especificando o cabeçalho
     response_json =json.loads(response.content) # recebimento da resposta e leitura do conteudo na integra
     status_port= response_json['data']['Value'] # seleção dos dados importantes da requisição
-    return status_port # retona os valore da função
+    return status_port # retona os valores da função --> este comentario eh realmente necessario?
 
 def get_time():
     now = datetime.datetime.now()
