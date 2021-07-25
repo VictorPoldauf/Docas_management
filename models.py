@@ -1,6 +1,7 @@
 import requests # request é a biblioteca responsavel por fazer requisições HTTP
 import json # É responsavel por padronizar entradas e saidas de dados no formato json
 import datetime
+import logging
 
 # TODO: deixar as variaveis de configuracao de IP e Porta no arquivo .env
 # TODO: padronizar as chaves do objeto JSON seguindo o padrao javascript
