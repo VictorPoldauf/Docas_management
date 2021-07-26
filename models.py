@@ -8,6 +8,7 @@ import logging
 # TODO: renomear o "data_time" para "dateTime" ou algum sinonimo em ingles respeitando o Case
 # TODO: "models" seria o melhor nome para esse arquivo?
 # TODO: padronizar o uso de aspas simples ou duplas, deixar o codigo uniforme
+# TODO: adicionar um try/catch para o processo de requisicao
 
 # FIXED: troca dos parametros de "IP" e "PORT" na funcao get_status para parecer mais padronizado
 
