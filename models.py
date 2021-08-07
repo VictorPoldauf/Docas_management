@@ -14,14 +14,14 @@ import logging
 
 def get_status_port(ip, port):  # Função criada para simplificar a requisição dos dados da remota
     remota_url = f"http://{ip}/api/crown/ac/GetRestDataOut" # Endereço reponsavel pela remota (api)
-    param ={"data":{"Offset":port,"dataTime":"hoje"}}  # indicação de qual porta eu quero pegar da remota ( comando json a ser enviado para a remota )
+    param = { "data" : { "Offset" : port, "dateTime": "hoje" } }  # indicação de qual porta eu quero pegar da remota ( comando json a ser enviado para a remota )
     headers = {"content-type": "application/json"} # estamos especificando o formato de entrega HTTP
-    response = requests.post(remota_url,data=json.dumps(param), headers=headers) #  enviando uma requisição post na url da remota, transformando os parametros em json e especificando o cabeçalho
+    response = requests.post(remota_url, data=json.dumps(param), headers=headers) #  enviando uma requisição post na url da remota, transformando os parametros em json e especificando o cabeçalho
     response_json =json.loads(response.content) # recebimento da resposta e leitura do conteudo na integra
     status_port= response_json["data"]["Value"] # seleção dos dados importantes da requisição
     return status_port
 
-def get_time(): # (Hugo)
+def get_time():
     now = datetime.datetime.now()
     round_mili = str(now.microsecond // 1000) # round is only for decimal numbers
     str_time = now.strftime("%Y-%m-%dT%X:" + round_mili)
